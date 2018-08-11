@@ -45,7 +45,9 @@ before_build:
 after_build:
   dotnet pack .\Source\LinqToDB.EntityFrameworkCore\ -c Release --no-build
 
-test: off
+test:
+  assemblies:
+    - '**\*.Tests.dll'
 
 artifacts:
 - path: \**\linq2db*.nupkg
