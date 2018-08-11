@@ -31,7 +31,7 @@ namespace LinqToDB.EntityFrameworkCore.Tests
 			var optionsBuilder = new DbContextOptionsBuilder<AdventureWorksContext>();
 			//new SqlServerDbContextOptionsBuilder(optionsBuilder);
 
-			optionsBuilder.UseSqlServer("Server=.;Database=AdventureWorks;Integrated Security=SSPI");
+			optionsBuilder.UseSqlServer(@"Database=master;Server=.;Integrated Security=True" /*"Server=.;Database=AdventureWorks;Integrated Security=SSPI"*/);
 			optionsBuilder.UseLoggerFactory(TestUtils.LoggerFactory);
 
 			_options = optionsBuilder.Options;
